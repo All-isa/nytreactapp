@@ -1,6 +1,7 @@
 import React from 'react';
-import Nav from ('/components/Nav');
+import Nav from './components/Nav';
 import './App.css';
+import Articles from './pages/article';
 import {
   BrowserRouter as Router,
   Route,
@@ -13,28 +14,16 @@ const App = () => (
   <div>
     <Nav />
     <Router>
-      <Switch>
-        <Route path="/" component={home} />
-        <Route path="/saved" component={saved} />
-        <Route component={home} />
-      </Switch>
+      {/* <Switch>
+        <Route exact path="/" component={Saved} />
+        <Route exact path="/articles" component={Saved} />
+        <Route exact path="/articles/:id" component={Saved} />
+        <Route exact path="/nyt" component={Results} />
+        <Route exact path="/nyt/:query" component={Results} />
+      </Switch> */}
     </Router>
   </div>
 );
-
-const home = () => {
-  <div>
-    <Nav />
-
-  </div>
-}
-
-const saved = () => {
-  <div>
-    <Nav />
-    
-  </div>
-}
 
 export default App;
 

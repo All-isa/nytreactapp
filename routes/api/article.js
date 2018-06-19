@@ -10,4 +10,6 @@ router.route("/:id")
     .put(articleController.update)
     .delete(articleController.remove);
 
+router.route("/articles")
+
 module.exports = router;
