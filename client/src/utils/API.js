@@ -1,24 +1,19 @@
-import axios from "axios";
-
+import axios from 'axios';
 
 export default {
-  // Gets all articles
-  getArticles: function() {
-      return axios.get("/api/articles");
+  callNYT: function (query) {
+    return axios.get('/api/article/call', { params: { q: query } });
   },
-  // Gets the article with the given id
-  getArticle: function(id) {
-    return axios.get("/api/articles/" + id);
+
+  getSaved: function () {
+    return axios.get('/api/saved');
   },
-  // Deletes the article with the given id
-  deleteArticle: function(id) {
-    return axios.delete("/api/articles/" + id);
+
+  deleteArticle: function (id) {
+    return axios.delete('/api/saved/' + id)
   },
-  // Saves an article to the database
-  saveArticle: function(articleData) {
-    return axios.post("/api/articles", articleData);
-  },
-  getNewArticles: function (query) {
-    return axios.get("/api/articles/nyt/" + query);
+
+  saveArticle: function (article) {
+    return axios.post('/api/saved', article)
   }
 };
