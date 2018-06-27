@@ -1,6 +1,6 @@
 const axios = require('axios');
 const router = require('express').Router();
-const articleController = require('../../controllers/articleController');
+const articleController = require('../../controllers/articlesController');
 
 router.route("/")
     .get(articleController.findAll)
